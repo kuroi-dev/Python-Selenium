@@ -1,12 +1,6 @@
 # Python-Selenium
-Flujos de pruebas para Selenium
 
-#Para utilizar este codigo se tiene que: 
 
-#Instalar python3, python, pip, pip3, selenium
-#Se debe descargar el driver de la vercion de Chrome instalada en el ordenador
-#Crear una carpeta con el archivo .py y el driver chrome
-#importar las siguientes librerias
 
 import math
 import random
@@ -16,22 +10,13 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 
 
-
-#ABRIR NAVEGADOR_____________________________________________________________________________
-
 browser = webdriver.Chrome('./chromedriver')
-
-#INGRESAR URL________________________________________________________________________________
-
 browser.get('https://docs.google.com/forms/d/e/1FAIpQLSchJzBQMz0z3Z_wLd_kBOH-IIbPRHkV1rYibPEZtTwgtQiQYA/viewform')
 sleep(random.uniform(3.0,5.0))
 mail = browser.find_element_by_xpath('//*[@id="identifierId"]')
 sleep(random.uniform(0.5,1.0))
 mail.click()
 sleep(random.uniform(0.5,1.0))
-
-#screenshoot
-
 mail.send_keys('xxxxxxxxxxxxxxx')
 sleep(random.uniform(0.5,1.0))
 siguiente1 = browser.find_element_by_xpath('//*[@id="identifierNext"]/div/button')
@@ -48,28 +33,14 @@ siguiente2 = browser.find_element_by_xpath('//*[@id="passwordNext"]/div/button')
 sleep(random.uniform(0.5,1.0))
 siguiente2.click()
 sleep(random.uniform(5.0,7.0))
-
-#INICIO DEL LOOP              ("Nastec","763371093"), ("Alma","695077009") , ("Banco Finandina-CO","8600518946") , ("Inacap","720120003") , ("Provida","762657368") , ("Grupo Falabella","776124109")
-#                             ("BCI","970060006") , ("Atentus","772375700") , ("PUC","816989000") , ("AFP Habitat","980001008") , ("Rimac","20100041953"), ("Claro","96799250K")
-#                            ("Banco Santander","97036000K") , ("Universidad La Salle","8600155426") , ("Banco Patagonia","30500006613") ("Banco Chile","970040005") ("Banco BCP","20100047218")
-#							("Contraloria","604000009")  , ("Santo Tomas","715515008") , ("Movistar","878455002") , ("Consejo para la Transparencia-CL","619794303") , ("Tivit","761307126")
-#							("Banco Bice" , "97080000K")
-#      tivit 
-#								
-
-
+							
 date1 = [("01062021") , ("02062021") , ("03062021") , ("04062021") , ("05062021")]
 
 date = '05062021'
 
-#list01 = lista2[indice][0]
-#list02 = lista2[indice][1]
-
 lista1 = [("Banco Central","970290001"), ("Claro","96799250K"), ("Grupo Falabella","776124109"), ("Inacap","720120003"), ("PUC","816989000"), ("Clinica Universidad de Los Andes","0"), ("Dipres","608020004"), ("Banchile","965712208"), ("Previred","969293900"), ("Saesa","779655504")]
 lista2 = [("Banco Patagonia","30500006613") , ("Nastec","763371093") , ("Atentus","772375700") , ("BCI","970060006")  , ("Banco Chile","970040005") , ("AFP Habitat","980001008")]
  
-
-
 text1 = 'Revision ticket del turno'
 
 conteo = 0
@@ -113,14 +84,14 @@ while indice < len(lista1):
 	sleep(random.uniform(0.5,1.0))
 	cliente.click()
 	sleep(random.uniform(0.5,1.0))
-#LISTA 1
+
 	cliente.send_keys(lista1[indice][0])
 	sleep(random.uniform(1.0,2.0))
 	idcliente = browser.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[5]/div/div/div[2]/div/div[1]/div/div[1]/input')
 	sleep(random.uniform(0.5,1.0))
 	idcliente.click()
 	sleep(random.uniform(0.5,1.0))
-#LISTA 2
+
 	idcliente.send_keys(lista1[indice][1])
 	sleep(random.uniform(2.0,4.0))
 	actividad0 = browser.find_element_by_xpath('//*[@id="mG61Hd"]/div[2]/div/div[2]/div[6]/div/div/div[2]/div/div[1]/div[1]/div[1]')
@@ -162,6 +133,5 @@ while indice < len(lista1):
 	nuevo.click()
 	sleep(random.uniform(20.0,30.0))
 	indice+=1
-conteo+=1
 
 
